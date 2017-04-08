@@ -1,0 +1,87 @@
+Aim : To collect data of any celebrity and do community detection of their friends network and sentimental analysis on tweets mentioning their name.
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+collect.py
+-------------------------------------------------------------------------------------------------------------------------------
+The collect.py does all the collection of data required.
+I have made setting options on top, letting you chose, if you want to run friends collection and tweet collection.
+
+friend_collection=False
+tweet_collection_test=True
+
+By default, I have set as True for tweet collection and False for friend collection. Since friend collection will take a lot more time.
+I have collected 107 friends of the celebrity.
+
+Also an option for number of tweets one would like to collect as test data.And friend network to check also can be changed on top setting.
+
+no_of_tweets=40
+friends_count=20
+
+All the data collected will be stored in folder data.
+Data stored are :
+
+Train_selenagomez.txt - This is the tweets generated for training. Although there are more than 1200 tweet details in this file. Many of the tweets were repeated.
+pos.txt - contains the tweets that is related to positive label (1)
+neg.txt - contains the tweets that is related to negative label (-1)
+neutral.txt - contains the tweets that is related to neutral label (0)
+
+The data generated for during collect.py are:
+
+friends.txt - contains the friends of the celebrity.
+friends folder - contains files for friends of celebrity's friends (I am using these files to establish the edges for graph in cluster.py)
+Test_selenagomez.txt - Tweets collected newly for testing.
+
+
+
+cluster.py
+-------------------------------------------------------------------------------------------------------------------------------
+
+cluster.py will read the data from friends.txt and friends folder to establish the friendship between the celebrity's friends and create graph with corresponding nodes and edges.
+It will generate a graph with the celebrity and network of their friends into graph.
+I am using the friends friends details in the friends folder to check if they are friends.
+
+The data generated for during cluster.py are:
+
+graph.txt - contains details of the edges of the graph after establishing the friendship network
+summary_cluster - contains all the summary details of the community detected.
+
+
+classify.py
+-------------------------------------------------------------------------------------------------------------------------------
+
+classify.py will do the sentimental classification of the new tweets collected based on the labelled data (pos.txt, neg.txt ,neutral.txt)
+
+I used 3 methods of classification here:
+
+AFINN and sentiment_calculation - I used AFINN to initially get the data labelled into classes ((pos.txt, neg.txt ,neutral.txt).
+Then I went thru the texts in each of the classes to verify if they belonged in the class. As AFINN does not perform well, I had to change the classes of many tweets.
+This AFINN and sentimental calculation is run only once on the training data. I have included the code as to help in the future for another celebrity sentiment labeling.
+
+Below are the machine learning methods used for sentimental analysis:
+Logistic Regression using countvectorizer
+Logistic Regression using tfidfvectorizer
+
+I used both countvectorizer and tfidfvecorizer to observe the difference in the classifcation. I noticed although the results are similar, some occusion, the result labels do differ.
+
+The data generated for during classify.py are:
+
+summary_classfication - contains all the summary details of the classification.
+
+
+summarize.py
+-------------------------------------------------------------------------------------------------------------------------------
+
+summarize.py reads all the summary files from cluster.py and classify.py and prints. Also saves the files to summary.txt
+
+
+Conclusions and inferences
+-------------------------------------------------------------------------------------------------------------------------------
+
+1. I collected data on Selena Gomez, but I wrote the code in a way so that it can be changed to a different celebrity, with some changes in each code file.
+2. I found out after data collection, most of the tweets were retweets hardly conveying much information, hence I could not get much data as expected for labelling. Also my labelled data is slightly skewed having more positive and neutral tweets with less negative tweets.
+3. Selena Gomez seems to have more positive and neutral tweets compared to negative tweet which can be used to concluded she mostly a likable celebrity by public. One could say this may be because my data is slightly skewed but I doubt.
+4. I observed during community detection since I had given a minimum number of nodes in each cluster, some of the nodes disappeared since they were not connected to more than one celbrity.
+5. After doing both countvectorizer and tfidf vectorizer for sentimental analysis, for my current data and testing files, countvectorizer performed better in most cases.
+

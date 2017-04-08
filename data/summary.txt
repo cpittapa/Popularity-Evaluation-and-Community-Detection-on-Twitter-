@@ -1,0 +1,42 @@
+
+ COMMUNITY DETECTION  
+ Number of users collected:  107
+ Number of communities discovered:  5
+ Average number of users per community:  8.2
+
+ CLASSIFICATION - SENTIMENTAL ANALYSIS  
+
+
+ Number of tweets collected for training: 1263
+ Number of tweets collected for testing:  40
+
+ Using Logistic Regressing (Countvectorizer) 
+
+ Number of instances per class found: 
+ Number of positive tweets are :5
+ Number of negative tweets are :3
+ Number of neutral tweets are :21
+
+ One example from each class: 
+
+
+ Positive case :RT @botazlabestia: tony just made the most fire selena gomez remix and now i wanna go extra hard on a pop song
+ Neutral case :RT @elegantclothe: Selena Gomez is something else 🌸💘🌹 https://t.co/FrVtyLrTaB
+ Negative case :RT @TheFactsOfShade: Does Selena Gomez deserve to get her first Grammy next year?
+
+RETWEET: Yes
+LIKE: No https://t.co/gE8IIDngsu
+
+  Using Logistic Regressing (Tfidf vectorizer) 
+
+ 
+ Number of instances per class found: 
+ Number of positive tweets are :6
+ Number of negative tweets are :None
+ Number of neutral tweets are :23
+
+ One example from each class: 
+
+
+ Positive case :RT @botazlabestia: tony just made the most fire selena gomez remix and now i wanna go extra hard on a pop song
+ Neutral case :RT @LifeWithSelG: [Video]: Madison Beer praising Selena Gomez’s award acceptance speech at the 2016 #AMAs during a recent live chat. https:…

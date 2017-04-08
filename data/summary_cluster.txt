@@ -1,0 +1,5 @@
+
+ COMMUNITY DETECTION  
+ Number of users collected:  107
+ Number of communities discovered:  5
+ Average number of users per community:  8.2

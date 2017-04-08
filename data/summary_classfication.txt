@@ -1,0 +1,35 @@
+
+
+ CLASSIFICATION - SENTIMENTAL ANALYSIS  
+
+
+ Number of tweets collected for training: 1263
+ Number of tweets collected for testing:  40
+
+ Using Logistic Regressing (Countvectorizer) 
+
+ Number of instances per class found: 
+ Number of positive tweets are :5
+ Number of negative tweets are :3
+ Number of neutral tweets are :21
+
+ One example from each class: 
+
+
+ Neutral case :RT @RHYD1Z3L: Selena Gomez fans go hard! Salute
+ Positive case :RT @LifeWithSelG: [Video]: Madison Beer praising Selena Gomez’s award acceptance speech at the 2016 #AMAs during a recent live chat. https:…
+ Negative case :@StarYouFollow Justin bieber, Harry styles, Selena gomez, Lucy hale, ZAYN Malik
+
+  Using Logistic Regressing (Tfidf vectorizer) 
+
+ 
+ Number of instances per class found: 
+ Number of positive tweets are :6
+ Number of negative tweets are :None
+ Number of neutral tweets are :23
+
+ One example from each class: 
+
+
+ Neutral case :RT @RHYD1Z3L: Selena Gomez fans go hard! Salute
+ Positive case :#KDDBNP TRUST NOBODY FT. SELENA GOMEZ &amp; TOREY LANEZ by CASHMERE CAT
